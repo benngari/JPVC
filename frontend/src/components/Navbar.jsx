@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Sun, Moon, Menu, X, Home, User, Heart, MessageCircle, LogIn, ChevronDown } from 'lucide-react'
+import { Sun, Moon, Menu, X, Home, User, Heart, MessageCircle, LogIn, ChevronDown, Film, Radio } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useAuth } from '../context/AuthContext'
 
@@ -32,15 +32,18 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-8 md:flex">
-            <NavLink to="/" className={navLinkClass} end>
-              Home
-            </NavLink>
-            <NavLink to="/about" className={navLinkClass}>
-              About
-            </NavLink>
-            <NavLink to="/give" className={navLinkClass}>
-              Give
+          <nav className="hidden items-center gap-6 xl:flex">
+            <NavLink to="/" className={navLinkClass} end>Home</NavLink>
+            <NavLink to="/about" className={navLinkClass}>About</NavLink>
+            <NavLink to="/give" className={navLinkClass}>Give</NavLink>
+            <NavLink to="/media" className={navLinkClass}>Media</NavLink>
+            <NavLink to="/live" className={({ isActive }) =>
+              `flex items-center gap-1.5 text-sm font-semibold transition-colors ${
+                isActive ? 'text-red-600' : 'text-ink/70 dark:text-cream/70 hover:text-red-600'
+              }`
+            }>
+              <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+              Live
             </NavLink>
 
             <span className="h-5 w-px bg-ink/10 dark:bg-cream/10" />
@@ -60,9 +63,7 @@ export default function Navbar() {
               >
                 <User size={18} className="text-ink/50 dark:text-cream/50" />
                 <span className="text-xs">
-                  <span className="block text-[10px] uppercase text-ink/40 dark:text-cream/40">
-                    {user ? 'Account' : 'Account'}
-                  </span>
+                  <span className="block text-[10px] uppercase text-ink/40 dark:text-cream/40">Account</span>
                   <span className="block font-semibold text-ink/80 dark:text-cream/80">
                     {user ? user.name?.split(' ')[0] : 'Sign In'}
                   </span>
@@ -82,11 +83,17 @@ export default function Navbar() {
                       >
                         Member Portal
                       </Link>
+                      {user.role === 'admin' && (
+                        <Link
+                          to="/admin"
+                          onClick={() => setAccountOpen(false)}
+                          className="block rounded-full bg-accent/10 px-4 py-2 text-center text-sm font-bold text-accent"
+                        >
+                          Admin Panel
+                        </Link>
+                      )}
                       <button
-                        onClick={() => {
-                          logout()
-                          setAccountOpen(false)
-                        }}
+                        onClick={() => { logout(); setAccountOpen(false) }}
                         className="w-full rounded-full border border-ink/15 dark:border-cream/15 px-4 py-2 text-sm font-semibold text-ink/70 dark:text-cream/70"
                       >
                         Sign Out
@@ -117,7 +124,7 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile controls */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 xl:hidden">
             <button
               onClick={toggleTheme}
               className="grid h-10 w-10 place-items-center rounded-full bg-ink/5 dark:bg-cream/10 text-accent"
@@ -138,12 +145,8 @@ export default function Navbar() {
       {/* Mobile drawer */}
       {menuOpen && (
         <div className="fixed inset-0 z-50 flex justify-end">
-          <div
-            className="absolute inset-0 bg-ink/40"
-            onClick={() => setMenuOpen(false)}
-            aria-hidden="true"
-          />
-          <div className="relative flex h-full w-full max-w-sm flex-col bg-white dark:bg-[#1A1714] p-6 shadow-2xl animate-in">
+          <div className="absolute inset-0 bg-ink/40" onClick={() => setMenuOpen(false)} aria-hidden="true" />
+          <div className="relative flex h-full w-full max-w-sm flex-col bg-white dark:bg-[#1A1714] p-6 shadow-2xl overflow-y-auto">
             <div className="flex items-center justify-between border-b border-ink/10 dark:border-cream/10 pb-5">
               <div className="flex items-center gap-3">
                 <ShieldLogo className="h-8 w-8" />
@@ -158,32 +161,19 @@ export default function Navbar() {
               </button>
             </div>
 
-            <p className="mt-6 text-xs font-bold tracking-[0.2em] text-ink/40 dark:text-cream/40">
-              PRINCIPAL LINKS
-            </p>
+            <p className="mt-6 text-xs font-bold tracking-[0.2em] text-ink/40 dark:text-cream/40">PRINCIPAL LINKS</p>
 
             <nav className="mt-4 flex flex-col gap-3">
               <DrawerLink to="/" icon={<Home size={20} />} label="Home" onClick={() => setMenuOpen(false)} />
               <DrawerLink to="/about" icon={<User size={20} />} label="About" onClick={() => setMenuOpen(false)} />
-              <DrawerLink
-                to="/give"
-                icon={<Heart size={20} />}
-                label="Give"
-                onClick={() => setMenuOpen(false)}
-                highlight
-              />
-              <DrawerLink
-                to="/companion"
-                icon={<MessageCircle size={20} />}
-                label="Bible Trivia"
-                onClick={() => setMenuOpen(false)}
-              />
-              <DrawerLink
-                to={user ? '/portal' : '/login'}
-                icon={<LogIn size={20} />}
-                label="Portal"
-                onClick={() => setMenuOpen(false)}
-              />
+              <DrawerLink to="/give" icon={<Heart size={20} />} label="Give" onClick={() => setMenuOpen(false)} highlight />
+              <DrawerLink to="/media" icon={<Film size={20} />} label="Media & Testimonies" onClick={() => setMenuOpen(false)} />
+              <DrawerLink to="/live" icon={<Radio size={20} />} label="Live Stream" onClick={() => setMenuOpen(false)} />
+              <DrawerLink to="/companion" icon={<MessageCircle size={20} />} label="Spiritual Companion" onClick={() => setMenuOpen(false)} />
+              <DrawerLink to={user ? '/portal' : '/login'} icon={<LogIn size={20} />} label="Portal" onClick={() => setMenuOpen(false)} />
+              {user?.role === 'admin' && (
+                <DrawerLink to="/admin" icon={<User size={20} />} label="Admin Panel" onClick={() => setMenuOpen(false)} />
+              )}
             </nav>
 
             <div className="mt-auto border-t border-ink/10 dark:border-cream/10 pt-5 text-center text-xs text-ink/40 dark:text-cream/40">
@@ -227,12 +217,7 @@ export function ShieldLogo({ className }) {
         strokeWidth="2.5"
         fill="none"
       />
-      <path
-        d="M32 16v32M21 28h22"
-        stroke="#E8622C"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
+      <path d="M32 16v32M21 28h22" stroke="#E8622C" strokeWidth="3" strokeLinecap="round" />
     </svg>
   )
 }

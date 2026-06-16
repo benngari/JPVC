@@ -1,10 +1,6 @@
-# JPVC — Jesus Prophetic Vision Church Website
+JPVC — Jesus Prophetic Vision Church Website
 
-A full-stack clone of [jesuspropheticvisionchurch.org](https://www.jesuspropheticvisionchurch.org)
 
-**Stack:** React + Vite + Tailwind CSS (frontend) · Node.js + Express + MongoDB (backend)
-
----
 
 ## 📁 Project Structure
 

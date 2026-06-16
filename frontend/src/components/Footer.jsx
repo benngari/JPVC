@@ -52,6 +52,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/media" className="hover:text-accent transition-colors">
+                  Media &amp; Testimonies
+                </Link>
+              </li>
+              <li>
+                <Link to="/live" className="hover:text-accent transition-colors">
+                  Live Stream
+                </Link>
+              </li>
+              <li>
                 <Link to="/portal" className="hover:text-accent transition-colors">
                   Member Portal
                 </Link>

@@ -1,13 +1,18 @@
 import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import { connectDB } from './config/db.js'
 import { errorHandler } from './middleware/errorHandler.js'
 
 import authRoutes from './routes/auth.js'
 import givingRoutes from './routes/giving.js'
 import aiRoutes from './routes/ai.js'
+import mediaRoutes from './routes/media.js'
+import liveStreamRoutes from './routes/livestream.js'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 const PORT = process.env.PORT || 5000
 
@@ -21,6 +26,9 @@ app.use(cors({
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// ── Static files (uploaded media) ────────────────────────────
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')))
+
 // ── Health check ──────────────────────────────────────────────
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', church: 'JPVC', timestamp: new Date().toISOString() })
@@ -30,6 +38,8 @@ app.get('/api/health', (req, res) => {
 app.use('/api/auth', authRoutes)
 app.use('/api/giving', givingRoutes)
 app.use('/api/ai', aiRoutes)
+app.use('/api/media', mediaRoutes)
+app.use('/api/livestream', liveStreamRoutes)
 
 // ── 404 ───────────────────────────────────────────────────────
 app.use((req, res) => {
