@@ -35,8 +35,8 @@ export default function Home() {
       </section>
 
       {/* Quick info bar */}
-      <section className="mx-auto -mt-10 max-w-5xl px-5">
-        <div className="grid gap-6 rounded-3xl bg-white dark:bg-[#1F1A16] p-8 shadow-xl sm:grid-cols-3">
+      <section className="mx-auto -mt-10 max-w-5xl px-5 relative z-10">
+        <div className="grid gap-6 rounded-3xl bg-white dark:bg-[#2A2420] p-8 shadow-2xl border border-ink/5 dark:border-cream/15 sm:grid-cols-3">
           <InfoItem icon={<Sun size={20} />} label="Sunday Service" value="9:00 AM - 5:00 PM" />
           <InfoItem icon={<MapPin size={20} />} label="Our Location" value="Kabiria, Nairobi" />
           <InfoItem icon={<Users size={20} />} label="Huduma" value="Thursday Sessions" />
@@ -164,15 +164,15 @@ export default function Home() {
 
 function InfoItem({ icon, label, value }) {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 sm:border-r sm:border-ink/10 sm:dark:border-cream/15 sm:last:border-0 sm:pr-6 sm:last:pr-0">
       <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-accent/10 text-accent">
         {icon}
       </div>
       <div>
-        <p className="text-xs font-bold tracking-[0.15em] text-ink/40 dark:text-cream/40">
+        <p className="text-xs font-bold tracking-[0.15em] text-ink/50 dark:text-cream/50">
           {label.toUpperCase()}
         </p>
-        <p className="font-bold">{value}</p>
+        <p className="font-bold text-ink dark:text-cream">{value}</p>
       </div>
     </div>
   )
