@@ -18,9 +18,7 @@ const PORT = process.env.PORT || 5000
 
 // ── Middleware ────────────────────────────────────────────────
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production'
-    ? ['https://yourdomain.com'] // update for production
-    : ['http://localhost:5173'],
+  origin: true,
   credentials: true,
 }))
 app.use(express.json())
