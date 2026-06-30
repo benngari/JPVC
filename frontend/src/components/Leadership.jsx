@@ -32,10 +32,10 @@ const LEADERS = [
     photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782807539/fcc0a6cd-83b0-4c3b-b459-561c39fbad27_tfxnrg.jpg',
   },
   {
-    name: 'Leader Six',
+    name: 'Wycliff Alulu',
     role: 'MINISTER',
     bio: 'Sharing the gospel and serving the Kabiria community.',
-    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782771736/Screenshot_2026-06-30_012200_fxfjdp.png',
+    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782807895/fcdd1e2d-ba79-4cf6-8f06-264379745a39_j1h20u.jpg',
   },
 ]
 
