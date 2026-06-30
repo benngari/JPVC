@@ -29,7 +29,7 @@ const LEADERS = [
     name: 'Leader Five',
     role: 'ELDER',
     bio: 'Committed to prayer, worship, and community outreach.',
-    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782771635/Screenshot_2026-06-30_012018_yudwxl.png',
+    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782771737/Screenshot_2026-06-30_012149_iwapel.png',
   },
   {
     name: 'Leader Six',
