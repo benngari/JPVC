@@ -17,7 +17,7 @@ const LEADERS = [
     name: 'Geofrey Abuga',
     role: 'DEACON',
     bio: 'Committed to the administrative excellence of the sanctuary.',
-    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782771679/Screenshot_2026-06-30_012106_kcg03x.png',
+    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782804638/0a5c6156-53af-4bd8-9bd6-4fd05b79f268_w78o7b.jpg',
   },
   {
     name: 'Leader Four',
