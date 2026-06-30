@@ -26,10 +26,10 @@ const LEADERS = [
     photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782804649/e342236e-8d01-468c-bd3b-6d581fd326cb_ifhk8g.jpg',
   },
   {
-    name: 'Leader Five',
-    role: 'ELDER',
+    name: 'Cathrine',
+    role: 'DEACONESS',
     bio: 'Committed to prayer, worship, and community outreach.',
-    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782771737/Screenshot_2026-06-30_012149_iwapel.png',
+    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782807539/fcc0a6cd-83b0-4c3b-b459-561c39fbad27_tfxnrg.jpg',
   },
   {
     name: 'Leader Six',
