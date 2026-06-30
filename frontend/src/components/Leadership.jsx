@@ -33,7 +33,7 @@ const LEADERS = [
   },
   {
     name: 'Wycliff Alulu',
-    role: 'MINISTER',
+    role: 'DEACON',
     bio: 'Sharing the gospel and serving the Kabiria community.',
     photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782807895/fcdd1e2d-ba79-4cf6-8f06-264379745a39_j1h20u.jpg',
   },
