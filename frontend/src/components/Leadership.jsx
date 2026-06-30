@@ -5,7 +5,7 @@ const LEADERS = [
     name: 'Steven Bwire',
     role: 'REVEREND',
     bio: 'Leading with vision and prophetic insight for over 15 years.',
-    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782771583/Screenshot_2026-06-30_011905_h1q90a.png',
+    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782804613/7b601486-8a9e-46c4-9e54-6dc200044214_zhkllx.jpg',
   },
   {
     name: 'Deaconess Pamela',
