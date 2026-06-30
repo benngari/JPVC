@@ -20,7 +20,7 @@ const LEADERS = [
     photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782804638/0a5c6156-53af-4bd8-9bd6-4fd05b79f268_w78o7b.jpg',
   },
   {
-    name: 'Leader Four',
+    name: 'Esther Washuka',
     role: 'CHAIRLADY',
     bio: 'Serving the congregation with wisdom and dedication.',
     photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782804649/e342236e-8d01-468c-bd3b-6d581fd326cb_ifhk8g.jpg',
