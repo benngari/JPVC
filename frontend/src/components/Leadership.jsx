@@ -35,7 +35,7 @@ const LEADERS = [
     name: 'Leader Six',
     role: 'MINISTER',
     bio: 'Sharing the gospel and serving the Kabiria community.',
-    photo: '',
+    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782771736/Screenshot_2026-06-30_012200_fxfjdp.png',
   },
 ]
 
