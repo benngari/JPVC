@@ -5,7 +5,7 @@ const LEADERS = [
     name: 'Steven Bwire',
     role: 'REVEREND',
     bio: 'Leading with vision and prophetic insight for over 15 years.',
-    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782804613/7b601486-8a9e-46c4-9e54-6dc200044214_zhkllx.jpg',
+    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782771583/Screenshot_2026-06-30_011905_h1q90a.png',
   },
   {
     name: 'Deaconess Pamela',
@@ -17,7 +17,7 @@ const LEADERS = [
     name: 'Geofrey Abuga',
     role: 'DEACON',
     bio: 'Committed to the administrative excellence of the sanctuary.',
-    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782804638/0a5c6156-53af-4bd8-9bd6-4fd05b79f268_w78o7b.jpg',
+    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782771679/Screenshot_2026-06-30_012106_kcg03x.png',
   },
   {
     name: 'Leader Four',
@@ -35,7 +35,7 @@ const LEADERS = [
     name: 'Leader Six',
     role: 'MINISTER',
     bio: 'Sharing the gospel and serving the Kabiria community.',
-    photo: 'https://res.cloudinary.com/dd4b2ssdy/image/upload/v1782771736/Screenshot_2026-06-30_012200_fxfjdp.png',
+    photo: '',
   },
 ]
 
@@ -51,7 +51,7 @@ export default function Leadership() {
         {LEADERS.map((leader, i) => (
           <div key={leader.name} className="text-left group">
             {/* Photo */}
-            <div className="relative overflow-hidden rounded-3xl bg-ink/5 dark:bg-cream/10 aspect-[4/3]">
+            <div className="relative overflow-hidden rounded-3xl bg-ink/5 dark:bg-cream/10 aspect-[3/4]">
               {leader.photo ? (
                 <img
                   src={leader.photo}
